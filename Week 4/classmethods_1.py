@@ -20,7 +20,7 @@ student_1 = Student("Rachel", "Richardson")
 print(student_1.tuition)
 
 Student.set_tuition(6000) #changes the class attribute (not the instance attribute)
-Student.tuition = 6000
+# This is the same as having Student.tuition = 6000
 print(student_1.tuition)
 
 student_2 = Student.from_string("Bryan Betancourt") #instance of class created using a class method as an alternative constructor
