@@ -24,9 +24,9 @@ B.next_node = C
 #At this point C is already pointing to None
 
 #How to traverse the linked list
-curr = head_node #curr is the "current node" that we are looking at. We start at the head node
+#curr = head_node #curr is the "current node" that we are looking at. We start at the head node
 
-# #This loop below only stops when curr is None (when curr is the tail node)
+#This loop below only stops when curr is None (when curr is the tail node)
 # while(curr): #Will run as long as curr is not after the tail node 
 #     print(curr)
 #     curr = curr.next_node
@@ -40,7 +40,7 @@ def display(first_node):
         curr = curr.next_node
     print(' -> '.join(list_of_nodes))
 
-# display(head_node)
+display(head_node)
 
 #How to search for a node in the linked list
 def search_linked_list(head_node, target_value):
@@ -51,33 +51,35 @@ def search_linked_list(head_node, target_value):
         curr = curr.next_node
     return False
 
-# #What do we expect as output for the next two statements?
+#What do we expect as output for the next two statements?
 # print(search_linked_list(head_node, "nail"))
 # print(search_linked_list(head_node, "helmet"))
 
 #To delete a specifc node
 def delete_specific_node(head_node, node_to_delete):
+  #case 1: to delete the head node
   if head_node == node_to_delete:
     return head_node.next_node
-
+  #to traverse the node 
   curr = head_node
-  while curr.next_node and curr.next_node != node_to_delete:
+  while curr.next_node and curr.next_node != node_to_delete: #this loop stops right before the node you want to delete
     curr = curr.next_node
 
+  #case 2: if node to be delete is not found
   if curr.next_node is None:
     return head_node
 
+  #case 3: to delete a middle node or the last node
   curr.next_node = curr.next_node.next_node
-
   return head_node
 
-new_head_node = delete_specific_node(head_node, B)
+new_head_node = delete_specific_node(head_node, head_node)
 display(new_head_node)
 
 #To insert a specific node
 #Let's assume that the position works as a zero-based index (first position is 0, second position is 1, and so on.)
 def insert_Node_At_Position(head_node, new_node, position):
-  if position == 0:
+  if position == 0: #if the new node should be inserted in the first position
     new_node.next_node = head_node
     return new_node
 
@@ -93,5 +95,5 @@ def insert_Node_At_Position(head_node, new_node, position):
   return head_node
 
 new_node = SinglyNode("shovel")
-new_head_node = insert_Node_At_Position(new_head_node, new_node, 1)
+new_head_node = insert_Node_At_Position(new_head_node, new_node, 0)
 display(new_head_node)
