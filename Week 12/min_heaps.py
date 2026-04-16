@@ -14,10 +14,10 @@ print("Min heap:", li)
 # heapq.heappush(li, 5)
 # # Heap before popping
 # print("Heap after pushing 5: ", li)
-# # Pop the smallest element from the heap
-# min = heapq.heappop(li)
-# print("Smallest:", min)
-# print("List after popping the smallest: ", li)
+# Pop the smallest element from the heap
+min = heapq.heappop(li)
+print("Smallest:", min)
+print("List after popping the smallest: ", li)
 
 #APPENDING AND POPPING SIMULTANEOUSLY
 # Push a new element (22) and pop the smallest element at the same time
